@@ -16,7 +16,7 @@ const Home = () => {
         justify-center h-full px-4 pt-20"
       >
         <h2
-          className="text-4xl sm:text-7xl font-bold
+          className="text-4xl sm:text-7xl font-bold text-center 
            text-white"
         >
           I'm a Full Stack Developer
@@ -24,18 +24,18 @@ const Home = () => {
 
         <div className="flex flex-col justify-evenly items-center md:flex-row">
           <div className="flex flex-col">
-            <p className="text-gray-500 py-4 max-w-md text-justify">
+            <p className=" text-gray-500 py-4 max-w-md text-justify">
               I have 5 years of experience as a web developer working on
               front-end and back-end. I have worked on various front-end
               frameworks - ReactJS, Angular, Redux and back-end frameworks -
               Flask, Spring Boot, NodeJS. Along with these, I also have
               knowledge of code versionsing tool - git clubbed with git
               versioning system - GitHub, Bitbucket, GitLab. During my industry
-              experience, I have worked in Agile Development team fosucusing on
+              experience, I have worked in Agile Development team focusing on
               SCRUM.
             </p>
 
-            <div>
+            <div className="flex items-center justify-center">
               <Link
                 to="projects"
                 smooth

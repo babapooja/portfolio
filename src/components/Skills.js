@@ -91,7 +91,7 @@ const Skills = () => {
     <div
       name="skills"
       className="bg-gradient-to-b from-gray-800 
-    to-black pt-20  w-full md:h-screen"
+    to-black pt-24  w-full md:h-screen"
     >
       <div
         className="max-w-screen-lg mx-auto p-4 

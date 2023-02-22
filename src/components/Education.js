@@ -21,7 +21,7 @@ const Education = () => {
   return (
     <div
       name="education"
-      className="w-full h-screen bg-gradient-to-b to-gray-800 from-black text-white pt-20"
+      className="sm:px-5 w-full h-screen bg-gradient-to-b to-gray-800 from-black text-white pt-20"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-20 text-center">

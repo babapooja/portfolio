@@ -33,7 +33,7 @@ const Projects = () => {
   return (
     <div
       name="projects"
-      className="bg-gradient-to-b to-black from-gray-800 w-full text-white md:h-screen pt-20"
+      className="flex flex-col items-center justify-center bg-gradient-to-b to-black from-gray-800 w-full text-white md:h-screen pt-20"
     >
       <div
         className="max-w-screen-lg p-4 pb-10 mx-auto flex flex-col justify-center
@@ -66,14 +66,16 @@ const Projects = () => {
                       onClick={() => navigateTo(demoLink)}
                       class="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 hover:font-bold"
                     >
-                      Demo
+                      <span className="border-b-2 border-gray-400">Demo</span>
                     </button>
                   ) : (
                     <button
                       onClick={() => navigateTo(demoLink)}
                       class=" px-6 py-3 m-4 duration-200 hover:scale-105 hover:font-bold"
                     >
-                      Read Article
+                      <span className="border-b-2 border-gray-400">
+                        Read Article
+                      </span>
                     </button>
                   )}
                   {codeLink && (
@@ -81,7 +83,7 @@ const Projects = () => {
                       onClick={() => navigateTo(codeLink)}
                       class="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 hover:font-bold"
                     >
-                      Code
+                      <span className="border-b-2 border-gray-400">Code</span>
                     </button>
                   )}
                 </div>
