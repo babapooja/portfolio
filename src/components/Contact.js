@@ -52,7 +52,7 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="w-full pt-20 h-screen bg-gradient-to-b to-black from-gray-800 text-white p-4"
+      className="w-full pt-24 h-fit bg-gradient-to-b to-black from-gray-800 text-white p-4"
     >
       <div className="flex flex-col p4 justify-center max-w-screen-lg mx-auto h-full">
         <div className=" text-center">
@@ -61,7 +61,7 @@ const Contact = () => {
           </p>
           <p className="py-6">Submit the form below to get in touch with me</p>
         </div>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center flex-col ">
           <form
             action={endUrl}
             method="POST"
@@ -98,35 +98,34 @@ const Contact = () => {
               Let's talk
             </button>
           </form>
-        </div>
-
-        {/* social links */}
-        <div className="flex items-center justify-center lg:hidden">
-          <ul className="flex">
-            {links.map(({ id, child, href, style, download }) => {
-              return (
-                <li
-                  key={id}
-                  className={
-                    "flex items-center h-10 px-3 bg-gray-500  duration-300 hover:scale-125" +
-                    " " +
-                    style
-                  }
-                >
-                  <a
-                    className="flex justify-between items-center 
-              w-full text-white"
-                    href={href}
-                    download={download}
-                    target="_blank"
-                    rel="noreferrer"
+          {/* social links */}
+          <div className="flex items-center justify-center lg:hidden">
+            <ul className="flex">
+              {links.map(({ id, child, href, style, download }) => {
+                return (
+                  <li
+                    key={id}
+                    className={
+                      "flex items-center h-10 px-3 bg-gray-500  duration-300 hover:scale-125" +
+                      " " +
+                      style
+                    }
                   >
-                    {child}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
+                    <a
+                      className="flex justify-between items-center 
+              w-full text-white"
+                      href={href}
+                      download={download}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {child}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </div>
       </div>
     </div>
