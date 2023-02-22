@@ -1,14 +1,62 @@
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import { BsFillPersonLinesFill } from "react-icons/bs";
 
 const Contact = () => {
   const endUrl = "https://getform.io/f/2174190c-7d69-40e0-a1f0-00fc9e275982";
+  const links = [
+    {
+      id: 1,
+      child: (
+        <>
+          <FaLinkedin size={25} />
+        </>
+      ),
+      href: "https://linkedin.com/in/pooja-baba",
+      style: "rounded-md",
+    },
+    {
+      id: 2,
+      child: (
+        <>
+          <FaGithub size={25} />
+        </>
+      ),
+      href: "https://github.com/babapooja",
+      style: "rounded-md mx-3",
+    },
+    {
+      id: 1,
+      child: (
+        <>
+          <HiOutlineMail size={25} />
+        </>
+      ),
+      href: "mailto:babapooja6@gmail.com",
+      style: "rounded-md",
+    },
+    {
+      id: 4,
+      child: (
+        <>
+          <BsFillPersonLinesFill size={25} />
+        </>
+      ),
+      href: "/Pooja_Baba_Resume.pdf",
+      style: "rounded-md",
+      style: "rounded-md mx-3",
+      download: true,
+    },
+  ];
+
   return (
     <div
       name="contact"
       className="w-full pt-20 h-screen bg-gradient-to-b to-black from-gray-800 text-white p-4"
     >
       <div className="flex flex-col p4 justify-center max-w-screen-lg mx-auto h-full">
-        <div className="pb-8 text-center">
+        <div className=" text-center">
           <p className="text-4xl font-bold border-b-4 inline border-gray-400">
             Contact
           </p>
@@ -51,6 +99,35 @@ const Contact = () => {
               Let's talk
             </button>
           </form>
+        </div>
+
+        {/* social links */}
+        <div className="flex items-center justify-center lg:hidden">
+          <ul className="flex">
+            {links.map(({ id, child, href, style, download }) => {
+              return (
+                <li
+                  key={id}
+                  className={
+                    "flex items-center h-10 px-3 bg-gray-500  duration-300 hover:scale-125" +
+                    " " +
+                    style
+                  }
+                >
+                  <a
+                    className="flex justify-between items-center 
+              w-full text-white"
+                    href={href}
+                    download={download}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {child}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       </div>
     </div>
