@@ -13,18 +13,16 @@ const Home = () => {
     >
       <div
         className="max-w-screen-lg mx-auto flex flex-col
-        justify-center h-full px-4"
+        justify-center h-full px-4 pt-20"
       >
-        {/* <div className="flex flex-col justify-center typewriter">
-        </div> */}
         <h2
           className="text-4xl sm:text-7xl font-bold
-           text-white typewriter"
+           text-white"
         >
           I'm a Full Stack Developer
         </h2>
 
-        <div className="flex justify-evenly items-center">
+        <div className="flex flex-col justify-evenly items-center md:flex-row">
           <div className="flex flex-col">
             <p className="text-gray-500 py-4 max-w-md text-justify">
               I have 5 years of experience as a web developer working on
@@ -39,7 +37,7 @@ const Home = () => {
 
             <div>
               <Link
-                to="portfolio"
+                to="projects"
                 smooth
                 duration={550}
                 className="group text-white w-fit px-6 
@@ -58,7 +56,7 @@ const Home = () => {
             <img
               src={myImage}
               alt="profile"
-              className="rounded-2xl mx-auto md:w-full mt-8"
+              className="rounded-2xl mx-auto w-4/5 md:w-full mt-8"
             />
           </div>
         </div>

@@ -1,37 +1,68 @@
 import React from "react";
+import { FaGraduationCap } from "react-icons/fa";
 
 const Education = () => {
+  const educationDetails = [
+    {
+      universityName: "Georgia State University, Atlanta",
+      graduationYear: "May 2023",
+      gpa: "3.9/4",
+      degree: "Master of Science in Computer Science",
+      link: "https://www.gsu.edu/",
+    },
+    {
+      universityName: "University of Pune, Pune",
+      graduationYear: "May 2017",
+      gpa: "3.7/4",
+      degree: "Bachelor of Engineering in Computer Engineering",
+      link: "http://www.unipune.ac.in/",
+    },
+  ];
   return (
     <div
       name="education"
-      className="w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white pt-20"
+      className="w-full h-screen bg-gradient-to-b to-gray-800 from-black text-white pt-20"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pb-8 text-center">
+        <div className="pb-20 text-center">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500 ">
             Education
           </p>
         </div>
 
-        <p className="text-xl text-justify">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius,
-          deserunt illum mollitia officiis qui exercitationem perferendis neque
-          quasi a recusandae necessitatibus tempora iusto! Blanditiis error
-          iste, totam fugiat recusandae rerum laborum perferendis molestiae
-          aperiam asperiores nemo. Magni dolor maxime debitis vitae, eaque hic
-          ab mollitia voluptatibus, a nostrum eveniet laborum!
-        </p>
-
-        <br />
-
-        <p className="text-xl text-justify">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum
-          pariatur, vel similique sint, nobis aspernatur ut praesentium
-          explicabo ipsam aliquid quasi laboriosam et culpa possimus repudiandae
-          quisquam ullam maiores ab unde. Fugiat odio mollitia nemo alias.
-          Commodi facilis atque nulla vero voluptatem explicabo. Quibusdam,
-          magni quo! Eum cupiditate debitis labore.
-        </p>
+        {educationDetails.map(
+          ({ universityName, graduationYear, degree, gpa, link }) => {
+            return (
+              <>
+                <div className="flex justify-between">
+                  <div className="flex items-center">
+                    <div className="hidden md:flex">
+                      <FaGraduationCap size={35} />
+                    </div>
+                    <a
+                      target="_blank"
+                      className="md:mx-3 font-bold text-lg inline 
+                        border-b-2 border-gray-300 md:text-xl "
+                      href={link}
+                    >
+                      {universityName}
+                    </a>
+                  </div>
+                  <p className="font-bold text-md md:text-xl">
+                    {graduationYear}
+                  </p>
+                </div>
+                <div className="flex justify-between mt-2">
+                  <p className="font-thin italic mx-14">{degree}</p>
+                  <p className="font-thin italic flex">
+                    <span className="hidden md:flex">GPA: &nbsp;</span> {gpa}
+                  </p>
+                </div>
+                <br />
+              </>
+            );
+          }
+        )}
       </div>
     </div>
   );

@@ -34,7 +34,7 @@ const NavBar = () => {
   return (
     <div
       className="flex justify-between items-center w-full h-20
-     text-white fixed bg-black px-4"
+     text-white fixed bg-black px-4 shadow-md shadow-gray-500"
     >
       <div>
         <h1 className="font-signature text-5xl ml-2">Pooja</h1>
@@ -59,9 +59,9 @@ const NavBar = () => {
 
       <div
         onClick={() => setNav(!nav)}
-        className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
+        className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden hover:text-gray-100 duration-300"
       >
-        {!nav ? <FaBars size={30} /> : <FaTimes size={30} />}
+        {!nav ? <FaBars size={30}/> : <FaTimes size={30} />}
       </div>
 
       {nav && (
