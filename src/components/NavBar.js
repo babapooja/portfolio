@@ -10,18 +10,23 @@ const NavBar = () => {
     },
     {
       id: 2,
-      link: "about",
+      link: "skills",
     },
     {
       id: 3,
-      link: "portfolio",
+      link: "experience",
     },
+    ,
     {
       id: 4,
-      link: "experience",
+      link: "projects",
     },
     {
       id: 5,
+      link: "education",
+    },
+    {
+      id: 6,
       link: "contact",
     },
   ];
@@ -42,7 +47,7 @@ const NavBar = () => {
             <li
               key={id}
               className="px-4 cursor-pointer capitalize 
-              font-medium text-gray-500 hover:scale-105 
+              font-medium text-gray-500 hover:scale-105 hover:font-bold hover:text-gray-100
               duration-200"
             >
               <Link to={link} smooth duration={550}>
@@ -71,8 +76,9 @@ const NavBar = () => {
             return (
               <li
                 key={id}
-                className="px-4 cursor-pointer capitalize 
-              py-6 text-4xl"
+                className="px-4 cursor-pointer capitalize
+              py-6 text-4xl hover:font-bold 
+              hover:text-gray-100 hover:duration-200 "
               >
                 <Link
                   onClick={() => setNav(!nav)}

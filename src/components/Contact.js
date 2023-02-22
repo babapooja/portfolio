@@ -5,10 +5,10 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="w-full h-screen bg-gradient-to-b from-black to-gray-800 text-white p-4"
+      className="w-full pt-20 h-screen bg-gradient-to-b from-black to-gray-800 text-white p-4"
     >
       <div className="flex flex-col p4 justify-center max-w-screen-lg mx-auto h-full">
-        <div className="pb-8">
+        <div className="pb-8 text-center">
           <p className="text-4xl font-bold border-b-4 inline border-gray-400">
             Contact
           </p>
@@ -18,7 +18,7 @@ const Contact = () => {
           <form
             action={endUrl}
             method="POST"
-            className="flex flex-col w-full md:w-1/2"
+            className="flex flex-col w-full md:w-3/5"
           >
             <input
               className="p-2 bg-transparent border-2 rounded-md

@@ -1,0 +1,21 @@
+.typewriter  {
+  /* Ensures the content is not revealed until the animation */
+  overflow: hidden;
+  /* Keeps the content on a single line */
+  white-space: nowrap;
+  /* Gives that scrolling effect as the typing happens */
+  margin: 0 auto;
+  /* Adjust as needed */
+  /* letter-spacing: 0.15em; */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}

@@ -1,15 +1,15 @@
 import React from "react";
 
-const Experience = () => {
+const Education = () => {
   return (
     <div
-      name="experience"
+      name="education"
       className="w-full h-screen bg-gradient-to-b from-gray-800 to-black text-white pt-20"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8 text-center">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500 ">
-            Experience
+            Education
           </p>
         </div>
 
@@ -37,4 +37,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Education;
