@@ -56,6 +56,8 @@ const Experience = () => {
                     <a
                       className="md:mx-3 font-bold text-lg md:text-xl border-b-2 border-gray-400"
                       target="_blank"
+                      href={link}
+                      rel="noreferrer"
                     >
                       {companyName}
                     </a>

@@ -44,7 +44,6 @@ const Contact = () => {
         </>
       ),
       href: "/Pooja_Baba_Resume.pdf",
-      style: "rounded-md",
       style: "rounded-md mx-3",
       download: true,
     },

@@ -41,6 +41,7 @@ const Education = () => {
                     </div>
                     <a
                       target="_blank"
+                      rel="noreferrer"
                       className="md:mx-3 font-bold text-lg inline 
                         border-b-2 border-gray-300 md:text-xl "
                       href={link}
