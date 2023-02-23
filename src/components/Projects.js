@@ -9,7 +9,7 @@ const Projects = () => {
       id: 1,
       src: linkedInClone,
       codeLink: "https://github.com/babapooja/linkedin-clone",
-      demoLink: "",
+      demoLink: "https://linkedin-clone-c2390.web.app/",
     },
     {
       id: 2,
