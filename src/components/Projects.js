@@ -2,6 +2,7 @@ import React from "react";
 import linkedInClone from "../assets/projects/linkedInClone.png";
 import mediumArticle from "../assets/projects/mediumArticle.png";
 import resumeBuilder from "../assets/projects/resumeBuilder.png";
+import taskManager from "../assets/projects/taskManager.png";
 
 const Projects = () => {
   const projects = [
@@ -24,6 +25,12 @@ const Projects = () => {
       codeLink: "https://github.com/babapooja/resume-creator",
       demoLink: "https://babapooja.github.io/resume-creator/",
     },
+    {
+      id: 4,
+      src: taskManager,
+      codeLink: "https://github.com/babapooja/task-manager-frontend",
+      demoLink: "https://task-manager.azurewebsites.net/"
+    }
   ];
 
   const navigateTo = (link) => {
