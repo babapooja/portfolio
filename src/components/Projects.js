@@ -29,8 +29,8 @@ const Projects = () => {
       id: 4,
       src: taskManager,
       codeLink: "https://github.com/babapooja/task-manager-frontend",
-      demoLink: "https://task-manager.azurewebsites.net/"
-    }
+      demoLink: "https://task-manager.azurewebsites.net/",
+    },
   ];
 
   const navigateTo = (link) => {
@@ -63,22 +63,25 @@ const Projects = () => {
         >
           {projects.map(({ id, src, codeLink, demoLink }) => {
             return (
-              <div key={id} className="shadow-md shadow-gray-600 rounded-lg">
-                <div className="object-cover h-3/4 hover:scale-105 duration-200">
+              <div
+                key={id}
+                className="shadow-md shadow-gray-600 rounded-lg hover:scale-105 duration-200"
+              >
+                <div className="object-cover h-3/4 ">
                   <img src={src} alt="" className="rounded-md h-full w-full" />
                 </div>
                 <div className="flex items-center justify-center">
                   {codeLink != null ? (
                     <button
                       onClick={() => navigateTo(demoLink)}
-                      class="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 hover:font-bold"
+                      className="w-1/2 px-6 py-3 m-4 duration-200 hover:font-bold"
                     >
                       <span className="border-b-2 border-gray-400">Demo</span>
                     </button>
                   ) : (
                     <button
                       onClick={() => navigateTo(demoLink)}
-                      class=" px-6 py-3 m-4 duration-200 hover:scale-105 hover:font-bold"
+                      className=" px-6 py-3 m-4 duration-200 hover:font-bold"
                     >
                       <span className="border-b-2 border-gray-400">
                         Read Article
@@ -88,7 +91,7 @@ const Projects = () => {
                   {codeLink && (
                     <button
                       onClick={() => navigateTo(codeLink)}
-                      class="w-1/2 px-6 py-3 m-4 duration-200 hover:scale-105 hover:font-bold"
+                      className="w-1/2 px-6 py-3 m-4 duration-200 hover:font-bold"
                     >
                       <span className="border-b-2 border-gray-400">Code</span>
                     </button>

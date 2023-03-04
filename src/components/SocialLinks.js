@@ -25,7 +25,7 @@ const SocialLinks = () => {
       href: "https://github.com/babapooja",
     },
     {
-      id: 1,
+      id: 3,
       child: (
         <>
           Mail <HiOutlineMail size={30} />
@@ -47,7 +47,7 @@ const SocialLinks = () => {
   ];
 
   return (
-    <div className="hidden lg:flex flex-col top-[35%] left-0 fixed">
+    <div className="hidden lg:flex flex-col top-[35%] left-0 fixed z-50">
       <ul>
         {links.map(({ id, child, href, style, download }) => {
           return (

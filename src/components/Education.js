@@ -1,5 +1,7 @@
 import React from "react";
 import { FaGraduationCap } from "react-icons/fa";
+import "animate.css/animate.min.css";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 const Education = () => {
   const educationDetails = [
@@ -19,51 +21,57 @@ const Education = () => {
     },
   ];
   return (
+    // <AnimationOnScroll animateIn="animate__bounceIn">
     <div
       name="education"
       className="sm:px-5 w-full h-screen bg-gradient-to-b to-gray-800 from-black text-white pt-20"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pb-20 text-center">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500 ">
-            Education
-          </p>
-        </div>
+        <AnimationOnScroll
+          animateIn="animate__slideInDown"
+          initiallyVisible="true"
+        >
+          <div className="pb-20 text-center">
+            <p className="text-4xl font-bold inline border-b-4 border-gray-500 ">
+              Education
+            </p>
+          </div>
 
-        {educationDetails.map(
-          ({ universityName, graduationYear, degree, gpa, link }) => {
-            return (
-              <>
-                <div className="flex justify-between">
-                  <div className="flex items-center">
-                    <div className="hidden md:flex">
-                      <FaGraduationCap size={35} />
-                    </div>
-                    <a
-                      target="_blank"
-                      rel="noreferrer"
-                      className="md:mx-3 font-bold text-lg inline 
+          {educationDetails.map(
+            ({ universityName, graduationYear, degree, gpa, link }) => {
+              return (
+                <div key={universityName+degree} >
+                  <div className="flex justify-between">
+                    <div className="flex items-center">
+                      <div className="hidden md:flex">
+                        <FaGraduationCap size={35} />
+                      </div>
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        className="md:mx-3 font-bold text-lg inline 
                         border-b-2 border-gray-300 md:text-xl "
-                      href={link}
-                    >
-                      {universityName}
-                    </a>
+                        href={link}
+                      >
+                        {universityName}
+                      </a>
+                    </div>
+                    <p className="font-bold text-md md:text-xl">
+                      {graduationYear}
+                    </p>
                   </div>
-                  <p className="font-bold text-md md:text-xl">
-                    {graduationYear}
-                  </p>
+                  <div className="flex justify-between mt-2">
+                    <p className="font-thin italic md:mx-14">{degree}</p>
+                    <p className="font-thin italic flex">
+                      <span className="hidden md:flex">GPA: &nbsp;</span> {gpa}
+                    </p>
+                  </div>
+                  <br />
                 </div>
-                <div className="flex justify-between mt-2">
-                  <p className="font-thin italic mx-14">{degree}</p>
-                  <p className="font-thin italic flex">
-                    <span className="hidden md:flex">GPA: &nbsp;</span> {gpa}
-                  </p>
-                </div>
-                <br />
-              </>
-            );
-          }
-        )}
+              );
+            }
+          )}
+        </AnimationOnScroll>
       </div>
     </div>
   );

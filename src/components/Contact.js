@@ -27,7 +27,7 @@ const Contact = () => {
       style: "rounded-md mx-3",
     },
     {
-      id: 1,
+      id: 3,
       child: (
         <>
           <HiOutlineMail size={25} />
