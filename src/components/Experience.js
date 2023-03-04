@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-// import { FaLaptopCode } from "react-icons/fa";
+import React, { useState } from "react";
 import { ImLocation2 } from "react-icons/im";
 import {
   HiOutlineExternalLink,
@@ -82,7 +81,7 @@ const Experience = () => {
 
   function buttonClick(status) {
     console.log(status);
-    if (exp == status) {
+    if (exp === status) {
       setExp("");
     } else {
       setExp(status);
@@ -141,7 +140,7 @@ const Experience = () => {
                     <div className="flex items-center">
                       <p className="flex items-center">
                         {startDate} - {endDate}
-                        {exp == position + companyName ? (
+                        {exp === position + companyName ? (
                           <HiOutlineMinus
                             className="ml-10"
                             size={20}
@@ -194,7 +193,7 @@ const Experience = () => {
                         </div>
                       </div>
                       <div className="w-32 flex-auto ml-5">
-                        <img src={logo} className="rounded-full h-32" />
+                        <img alt="logo" src={logo} className="rounded-full h-32" />
                       </div>
                     </div>
                   </div>
