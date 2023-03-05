@@ -2,9 +2,17 @@ import React from "react";
 import myImage from "../assets/myImage.jpg";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
+import TypewriterComponent from "typewriter-effect";
+
 import "./Home.css";
 
 const Home = () => {
+  var intro = "Hi, I am Pooja Baba";
+  var messages = [
+    "I am a Front-End Developer.",
+    "I am a Back-End Developer.",
+    "I am a Full Stack Developer.",
+  ];
   return (
     <div
       name="home"
@@ -15,12 +23,22 @@ const Home = () => {
         className="max-w-screen-lg mx-auto flex flex-col
         justify-center h-full px-4 pt-20"
       >
-        <h2
-          className="text-4xl sm:text-7xl font-bold text-center 
+        <h2 className="text-4xl sm:text-7xl font-bold text-center text-white">
+          {intro}
+        </h2>
+        <h4
+          className="text-2xl text-center my-4
            text-white"
         >
-          I'm a Full Stack Developer
-        </h2>
+          <TypewriterComponent
+            options={{
+              strings: messages,
+              autoStart: true,
+              loop: true,
+              delay: 50,
+            }}
+          />
+        </h4>
 
         <div className="flex flex-col justify-evenly items-center md:flex-row">
           <div className="flex flex-col">
@@ -56,7 +74,7 @@ const Home = () => {
             <img
               src={myImage}
               alt="profile"
-              className="rounded-2xl mx-auto w-4/5 md:w-full mt-8"
+              className="rounded-2xl mx-auto w-4/5 md:w-full mt-8 md:mt-0"
             />
           </div>
         </div>

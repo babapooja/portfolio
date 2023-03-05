@@ -37,7 +37,7 @@ const NavBar = () => {
      text-white fixed bg-black px-4 shadow-md shadow-gray-500"
     >
       <div>
-        <h1 className="font-signature text-5xl ml-2">Pooja</h1>
+        <h1 className="font-signature text-4xl ml-2 mt-3">P.B.B</h1>
       </div>
 
       <ul className="hidden md:flex">

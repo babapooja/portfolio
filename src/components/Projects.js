@@ -3,7 +3,7 @@ import linkedInClone from "../assets/projects/linkedInClone.png";
 import mediumArticle from "../assets/projects/mediumArticle.png";
 import resumeBuilder from "../assets/projects/resumeBuilder.png";
 import taskManager from "../assets/projects/taskManager.png";
-
+import { Zoom, Fade } from "react-awesome-reveal";
 const Projects = () => {
   const projects = [
     {
@@ -46,15 +46,17 @@ const Projects = () => {
         className="max-w-screen-lg p-4 pb-10 mx-auto flex flex-col justify-center
       w-full h-fit"
       >
-        <div className="pb-6 text-center">
-          <p
-            className="text-4xl font-bold inline border-b-4
+        <Fade>
+          <div className="pb-6 text-center">
+            <p
+              className="text-4xl font-bold inline border-b-4
            border-gray-500 "
-          >
-            Projects
-          </p>
-          <p className="pt-6">Check out some of my work right here</p>
-        </div>
+            >
+              Projects
+            </p>
+            <p className="pt-6">Check out some of my work right here</p>
+          </div>
+        </Fade>
         {/* card structure */}
 
         <div
@@ -63,41 +65,46 @@ const Projects = () => {
         >
           {projects.map(({ id, src, codeLink, demoLink }) => {
             return (
-              <div
-                key={id}
-                className="shadow-md shadow-gray-600 rounded-lg hover:scale-105 duration-200"
-              >
-                <div className="object-cover h-3/4 ">
-                  <img src={src} alt="" className="rounded-md h-full w-full" />
+              <Zoom key={id}>
+                <div className="shadow-md shadow-gray-600 rounded-lg hover:scale-105 duration-200 h-auto">
+                  <div
+                    className="h-60"
+                    style={{
+                      backgroundImage: `url(${src})`,
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  ></div>
+                  <div className="flex items-center justify-center">
+                    {codeLink != null ? (
+                      <button
+                        onClick={() => navigateTo(demoLink)}
+                        className="w-1/2 px-6 py-3 m-4 duration-200 hover:font-bold"
+                      >
+                        <span className="border-b-2 border-gray-400">Demo</span>
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => navigateTo(demoLink)}
+                        className=" px-6 py-3 m-4 duration-200 hover:font-bold"
+                      >
+                        <span className="border-b-2 border-gray-400">
+                          Read Article
+                        </span>
+                      </button>
+                    )}
+                    {codeLink && (
+                      <button
+                        onClick={() => navigateTo(codeLink)}
+                        className="w-1/2 px-6 py-3 m-4 duration-200 hover:font-bold"
+                      >
+                        <span className="border-b-2 border-gray-400">Code</span>
+                      </button>
+                    )}
+                  </div>
                 </div>
-                <div className="flex items-center justify-center">
-                  {codeLink != null ? (
-                    <button
-                      onClick={() => navigateTo(demoLink)}
-                      className="w-1/2 px-6 py-3 m-4 duration-200 hover:font-bold"
-                    >
-                      <span className="border-b-2 border-gray-400">Demo</span>
-                    </button>
-                  ) : (
-                    <button
-                      onClick={() => navigateTo(demoLink)}
-                      className=" px-6 py-3 m-4 duration-200 hover:font-bold"
-                    >
-                      <span className="border-b-2 border-gray-400">
-                        Read Article
-                      </span>
-                    </button>
-                  )}
-                  {codeLink && (
-                    <button
-                      onClick={() => navigateTo(codeLink)}
-                      className="w-1/2 px-6 py-3 m-4 duration-200 hover:font-bold"
-                    >
-                      <span className="border-b-2 border-gray-400">Code</span>
-                    </button>
-                  )}
-                </div>
-              </div>
+              </Zoom>
             );
           })}
         </div>

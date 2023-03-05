@@ -1,8 +1,11 @@
 import React from "react";
 import { FaGraduationCap } from "react-icons/fa";
-import "animate.css/animate.min.css";
-import { AnimationOnScroll } from "react-animation-on-scroll";
-
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { Fade } from "react-awesome-reveal";
 const Education = () => {
   const educationDetails = [
     {
@@ -21,57 +24,50 @@ const Education = () => {
     },
   ];
   return (
-    // <AnimationOnScroll animateIn="animate__bounceIn">
     <div
       name="education"
       className="sm:px-5 w-full h-screen bg-gradient-to-b to-gray-800 from-black text-white pt-20"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <AnimationOnScroll
-          animateIn="animate__slideInDown"
-          initiallyVisible="true"
-        >
+        <Fade>
           <div className="pb-20 text-center">
             <p className="text-4xl font-bold inline border-b-4 border-gray-500 ">
               Education
             </p>
           </div>
-
-          {educationDetails.map(
-            ({ universityName, graduationYear, degree, gpa, link }) => {
-              return (
-                <div key={universityName+degree} >
-                  <div className="flex justify-between">
-                    <div className="flex items-center">
-                      <div className="hidden md:flex">
-                        <FaGraduationCap size={35} />
-                      </div>
-                      <a
-                        target="_blank"
-                        rel="noreferrer"
-                        className="md:mx-3 font-bold text-lg inline 
-                        border-b-2 border-gray-300 md:text-xl "
-                        href={link}
-                      >
-                        {universityName}
-                      </a>
-                    </div>
-                    <p className="font-bold text-md md:text-xl">
-                      {graduationYear}
-                    </p>
-                  </div>
-                  <div className="flex justify-between mt-2">
-                    <p className="font-thin italic md:mx-14">{degree}</p>
-                    <p className="font-thin italic flex">
-                      <span className="hidden md:flex">GPA: &nbsp;</span> {gpa}
-                    </p>
-                  </div>
-                  <br />
-                </div>
-              );
-            }
-          )}
-        </AnimationOnScroll>
+        </Fade>
+        {educationDetails.map(
+          ({ universityName, graduationYear, degree, gpa, link }, index) => {
+            return (
+              <div key={universityName + degree}>
+                <VerticalTimeline animate={true}>
+                  <VerticalTimelineElement
+                    className="vertical-timeline-element--education"
+                    date={graduationYear}
+                    iconStyle={{ background: "#338bf1", color: "#fff" }}
+                    icon={<FaGraduationCap />}
+                    position={index % 2 === 0 ? "right" : "left"}
+                  >
+                    <h3 className="text-xl font-semibold text-black">
+                      {universityName}
+                    </h3>
+                    <h4 className="text-md italic text-black">{degree}</h4>
+                    <h4 className="text-md italic text-black">GPA: {gpa}</h4>
+                    <a
+                      className="italic underline text-sm"
+                      style={{ color: "#338bf1" }}
+                      href={link}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {link}
+                    </a>
+                  </VerticalTimelineElement>
+                </VerticalTimeline>
+              </div>
+            );
+          }
+        )}
       </div>
     </div>
   );
