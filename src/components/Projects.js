@@ -1,5 +1,6 @@
 import React from "react";
 import linkedInClone from "../assets/projects/linkedInClone.png";
+import weatherApp from "../assets/projects/weatherApp.png";
 import mediumArticle from "../assets/projects/mediumArticle.png";
 import resumeBuilder from "../assets/projects/resumeBuilder.png";
 import taskManager from "../assets/projects/taskManager.png";
@@ -8,28 +9,40 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      src: weatherApp,
+      projectTitle: "Weather App - ReactJS",
+      codeLink: "https://github.com/babapooja/weather-app",
+      demoLink: "https://reactjs-weather-app-weather-api.netlify.app/",
+    },
+    {
+      id: 5,
       src: linkedInClone,
+      projectTitle: "LinkedIn Clone - ReactJS",
       codeLink: "https://github.com/babapooja/linkedin-clone",
       demoLink: "https://linkedin-clone-c2390.web.app/",
     },
-    {
-      id: 2,
-      src: mediumArticle,
-      codeLink: null,
-      demoLink:
-        "https://babapooja.medium.com/how-to-begin-with-web-development-dc97cf7c3b97",
-    },
+
     {
       id: 3,
       src: resumeBuilder,
+      projectTitle: "Resume Builder - ReactJS",
       codeLink: "https://github.com/babapooja/resume-creator",
       demoLink: "https://babapooja.github.io/resume-creator/",
     },
     {
       id: 4,
       src: taskManager,
+      projectTitle: "Task Manager - MEAN",
       codeLink: "https://github.com/babapooja/task-manager-frontend",
       demoLink: "https://task-manager.azurewebsites.net/",
+    },
+    {
+      id: 2,
+      src: mediumArticle,
+      projectTitle: "Medium Article",
+      codeLink: null,
+      demoLink:
+        "https://babapooja.medium.com/how-to-begin-with-web-development-dc97cf7c3b97",
     },
   ];
 
@@ -63,7 +76,7 @@ const Projects = () => {
           className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 
         px-12 sm:px-0"
         >
-          {projects.map(({ id, src, codeLink, demoLink }) => {
+          {projects.map(({ id, src, codeLink, demoLink, projectTitle }) => {
             return (
               <Zoom key={id}>
                 <div className="shadow-md shadow-gray-600 rounded-lg hover:scale-105 duration-200 h-auto">
@@ -76,18 +89,21 @@ const Projects = () => {
                       backgroundPosition: "center",
                     }}
                   ></div>
-                  <div className="flex items-center justify-center">
+                  <p className="text-xl text-center font-medium mt-2">
+                    {projectTitle}
+                  </p>
+                  <div className="flex  items-center justify-center">
                     {codeLink != null ? (
                       <button
                         onClick={() => navigateTo(demoLink)}
-                        className="w-1/2 px-6 py-3 m-4 duration-200 hover:font-bold"
+                        className="w-1/2 px-6 pb-4 duration-200 hover:font-bold"
                       >
                         <span className="border-b-2 border-gray-400">Demo</span>
                       </button>
                     ) : (
                       <button
                         onClick={() => navigateTo(demoLink)}
-                        className=" px-6 py-3 m-4 duration-200 hover:font-bold"
+                        className=" px-6 pb-4 duration-200 hover:font-bold"
                       >
                         <span className="border-b-2 border-gray-400">
                           Read Article
@@ -97,7 +113,7 @@ const Projects = () => {
                     {codeLink && (
                       <button
                         onClick={() => navigateTo(codeLink)}
-                        className="w-1/2 px-6 py-3 m-4 duration-200 hover:font-bold"
+                        className="w-1/2 px-6 pb-4 duration-200 hover:font-bold"
                       >
                         <span className="border-b-2 border-gray-400">Code</span>
                       </button>
