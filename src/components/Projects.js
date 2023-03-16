@@ -4,7 +4,7 @@ import weatherApp from "../assets/projects/weatherApp.png";
 import mediumArticle from "../assets/projects/mediumArticle.png";
 import resumeBuilder from "../assets/projects/resumeBuilder.png";
 import taskManager from "../assets/projects/taskManager.png";
-import { Zoom, Fade } from "react-awesome-reveal";
+import { Fade } from "react-awesome-reveal";
 const Projects = () => {
   const projects = [
     {
@@ -53,7 +53,8 @@ const Projects = () => {
   return (
     <div
       name="projects"
-      className="flex flex-col items-center justify-center bg-gradient-to-b to-black from-gray-800 w-full text-white md:h-screen pt-20"
+      className="flex flex-col items-center justify-center dark:bg-gradient-to-b dark:to-black dark:from-gray-800 w-full
+       dark:text-white md:h-full pt-20"
     >
       <div
         className="max-w-screen-lg p-4 pb-10 mx-auto flex flex-col justify-center
@@ -67,7 +68,7 @@ const Projects = () => {
             >
               Projects
             </p>
-            <p className="pt-6">Check out some of my work right here</p>
+            <p className="pt-6 font-medium">Check out some of my work right here</p>
           </div>
         </Fade>
         {/* card structure */}
@@ -78,49 +79,50 @@ const Projects = () => {
         >
           {projects.map(({ id, src, codeLink, demoLink, projectTitle }) => {
             return (
-              <Zoom key={id}>
-                <div className="shadow-md shadow-gray-600 rounded-lg hover:scale-105 duration-200 h-auto">
-                  <div
-                    className="h-60"
-                    style={{
-                      backgroundImage: `url(${src})`,
-                      backgroundRepeat: "no-repeat",
-                      backgroundSize: "cover",
-                      backgroundPosition: "center",
-                    }}
-                  ></div>
-                  <p className="text-xl text-center font-medium mt-2">
-                    {projectTitle}
-                  </p>
-                  <div className="flex  items-center justify-center">
-                    {codeLink != null ? (
-                      <button
-                        onClick={() => navigateTo(demoLink)}
-                        className="w-1/2 px-6 pb-4 duration-200 hover:font-bold"
-                      >
-                        <span className="border-b-2 border-gray-400">Demo</span>
-                      </button>
-                    ) : (
-                      <button
-                        onClick={() => navigateTo(demoLink)}
-                        className=" px-6 pb-4 duration-200 hover:font-bold"
-                      >
-                        <span className="border-b-2 border-gray-400">
-                          Read Article
-                        </span>
-                      </button>
-                    )}
-                    {codeLink && (
-                      <button
-                        onClick={() => navigateTo(codeLink)}
-                        className="w-1/2 px-6 pb-4 duration-200 hover:font-bold"
-                      >
-                        <span className="border-b-2 border-gray-400">Code</span>
-                      </button>
-                    )}
-                  </div>
+              <div
+                key={id}
+                className="shadow-md shadow-gray-600 rounded-lg hover:scale-105 duration-200 h-auto"
+              >
+                <div
+                  className="h-60"
+                  style={{
+                    backgroundImage: `url(${src})`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }}
+                ></div>
+                <p className="text-xl text-center font-medium mt-2">
+                  {projectTitle}
+                </p>
+                <div className="flex  items-center justify-center mt-2">
+                  {codeLink != null ? (
+                    <button
+                      onClick={() => navigateTo(demoLink)}
+                      className="w-1/2 px-6 pb-4 duration-200 hover:font-bold"
+                    >
+                      <span className="border-b-2 border-gray-400">Demo</span>
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => navigateTo(demoLink)}
+                      className=" px-6 pb-4 duration-200 hover:font-bold"
+                    >
+                      <span className="border-b-2 border-gray-400">
+                        Read Article
+                      </span>
+                    </button>
+                  )}
+                  {codeLink && (
+                    <button
+                      onClick={() => navigateTo(codeLink)}
+                      className="w-1/2 px-6 pb-4 duration-200 hover:font-bold"
+                    >
+                      <span className="border-b-2 border-gray-400">Code</span>
+                    </button>
+                  )}
                 </div>
-              </Zoom>
+              </div>
             );
           })}
         </div>

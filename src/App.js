@@ -6,10 +6,11 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import Projects from "./components/Projects";
 import SocialLinks from "./components/SocialLinks";
+import Switcher from "./utils/Switcher";
 
 function App() {
   return (
-    <div>
+    <div className="relative">
       <NavBar />
       <Home />
       <Skills />
@@ -18,6 +19,18 @@ function App() {
       <Education />
       <Contact />
       <SocialLinks />
+      <div
+        className="hidden fixed lg:flex flex-row-reverse justify-between items-center w-45 h-14 px-4 bg-gray-500 bottom-0 right-0 mr-[-122px] hover:rounded-md
+    hover:mr-[-10px] duration-300 text-white rounded-md "
+      >
+        <p
+          className="flex justify-between items-center 
+              w-full text-white font-medium"
+        >
+          Switch Mode
+        </p>
+        <Switcher size={40} />
+      </div>
     </div>
   );
 }

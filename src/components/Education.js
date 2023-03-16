@@ -26,7 +26,7 @@ const Education = () => {
   return (
     <div
       name="education"
-      className="sm:px-5 w-full h-screen bg-gradient-to-b to-gray-800 from-black text-white pt-20"
+      className="sm:px-5 w-full h-screen dark:bg-gradient-to-b dark:to-gray-800 dark:from-black dark:text-white pt-20"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <Fade>
@@ -40,22 +40,26 @@ const Education = () => {
           ({ universityName, graduationYear, degree, gpa, link }, index) => {
             return (
               <div key={universityName + degree}>
-                <VerticalTimeline animate={true}>
+                <VerticalTimeline animate={true} lineColor="#3b82f6">
                   <VerticalTimelineElement
                     className="vertical-timeline-element--education"
                     date={graduationYear}
+                    contentStyle={{
+                      background: "linear-gradient(#06b6d4, #3b82f6)",
+                    }}
+                    contentArrowStyle={{ borderRight: "7px solid #3b82f6" }}
                     iconStyle={{ background: "#338bf1", color: "#fff" }}
                     icon={<FaGraduationCap />}
                     position={index % 2 === 0 ? "right" : "left"}
                   >
-                    <h3 className="text-xl font-semibold text-black">
+                    <h3 className="text-xl font-semibold text-white">
                       {universityName}
                     </h3>
-                    <h4 className="text-md italic text-black">{degree}</h4>
-                    <h4 className="text-md italic text-black">GPA: {gpa}</h4>
+                    <h4 className="text-md italic text-white">{degree}</h4>
+                    <h4 className="text-md italic text-white">GPA: {gpa}</h4>
                     <a
                       className="italic underline text-sm"
-                      style={{ color: "#338bf1" }}
+                      style={{ color: "white" }}
                       href={link}
                       target="_blank"
                       rel="noreferrer"

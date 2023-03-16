@@ -34,19 +34,20 @@ const NavBar = () => {
   return (
     <div
       className="flex justify-between items-center w-full h-20 z-50
-     text-white fixed bg-black px-4 shadow-md shadow-gray-500"
+     text-black dark:text-white fixed bg-white dark:bg-black px-4"
     >
       <div>
         <h1 className="font-signature text-4xl ml-2 mt-3">P.B.B</h1>
       </div>
 
+      {/* top navbar */}
       <ul className="hidden md:flex">
         {links.map(({ id, link }) => {
           return (
             <li
               key={id}
               className="px-4 cursor-pointer capitalize 
-              font-medium text-gray-500 hover:scale-105 hover:font-bold hover:text-gray-100
+              font-medium dark:text-gray-500 hover:scale-105 hover:font-bold
               duration-200"
             >
               <Link to={link} smooth duration={550}>

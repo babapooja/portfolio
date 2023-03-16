@@ -10,7 +10,6 @@ import MYSQL from "../assets/mysql.png";
 import PYTHON from "../assets/python.png";
 import JAVA from "../assets/java.png";
 import ANGULAR from "../assets/angular.png";
-import GITHUB from "../assets/github.png";
 import { Fade, Zoom } from "react-awesome-reveal";
 
 const Skills = () => {
@@ -81,33 +80,27 @@ const Skills = () => {
       title: "Jira",
       style: "shadow-blue-500",
     },
-    {
-      id: 12,
-      src: GITHUB,
-      title: "GitHub",
-      style: "shadow-gray-500",
-    },
   ];
   return (
     <div
       name="skills"
-      className="bg-gradient-to-b from-gray-800 
-    to-black pt-24  w-full md:h-screen"
+      className=" bg-white dark:bg-gradient-to-b dark:from-gray-800 
+    dark:to-black pt-24  w-full md:h-screen"
     >
       <div
         className="max-w-screen-lg mx-auto p-4 
       flex flex-col justify-center w-full h-full 
-      text-white"
+      dark:text-white"
       >
         <Fade>
           <div className="text-center">
             <p
               className="text-4xl font-bold inline 
-          border-b-4 border-gray-500 p-2"
+          border-b-4 border-gray-700 dark:border-gray-500 p-2"
             >
               Skills
             </p>
-            <p className="py-6">These are the technologies I have worked on</p>
+            <p className="py-6 font-medium">These are the technologies I have worked on</p>
           </div>
         </Fade>
 
@@ -126,7 +119,7 @@ const Skills = () => {
                   }
                 >
                   <img src={src} alt="" className="w-20 mx-auto" />
-                  <p className="mt-4">{title}</p>
+                  <p className="mt-4 font-semibold">{title}</p>
                 </div>
               </Zoom>
             );

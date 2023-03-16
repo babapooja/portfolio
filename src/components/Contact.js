@@ -2,6 +2,7 @@ import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import Switcher from "../utils/Switcher";
 
 const Contact = () => {
   const endUrl = "https://getform.io/f/2174190c-7d69-40e0-a1f0-00fc9e275982";
@@ -52,14 +53,14 @@ const Contact = () => {
   return (
     <div
       name="contact"
-      className="w-full pt-24 bg-gradient-to-b to-black from-gray-800 text-white p-4 h-full"
+      className="w-full pt-24 dark:bg-gradient-to-b dark:to-black dark:from-gray-800 dark:text-white p-4 h-full"
     >
       <div className="flex flex-col p4 justify-center max-w-screen-lg mx-auto h-full">
         <div className=" text-center">
-          <p className="text-4xl font-bold border-b-4 inline border-gray-400">
+          <p className="text-4xl font-bold border-b-4 inline  border-gray-700 dark:border-gray-400">
             Contact
           </p>
-          <p className="py-6">Submit the form below to get in touch with me</p>
+          <p className="py-6 font-medium">Submit the form below to get in touch with me</p>
         </div>
         <div className="flex justify-center items-center flex-col ">
           <form
@@ -69,14 +70,15 @@ const Contact = () => {
           >
             <input
               className="p-2 bg-transparent border-2 rounded-md
-            text-white focus:outline-none"
+              border-gray-500 dark:border-gray-300
+            dark:text-white focus:outline-none"
               type="text"
               name="name"
               placeholder="Enter your name"
             />
             <input
-              className="my-4 p-2 bg-transparent border-2 rounded-md
-            text-white focus:outline-none"
+              className="my-4 p-2 bg-transparent border-2 rounded-md border-gray-500 dark:border-gray-300
+            dark:text-white focus:outline-none"
               type="email"
               name="name"
               placeholder="Enter your email"
@@ -85,8 +87,8 @@ const Contact = () => {
               name="message"
               placeholder="Enter your message"
               rows="10"
-              className="p-2 bg-transparent border-2 
-              rounded-md text-white focus:outline-none"
+              className="p-2 bg-transparent border-2 border-gray-500 dark:border-gray-300
+              rounded-md dark:text-white focus:outline-none"
             ></textarea>
             <button
               className="text-white 
@@ -124,6 +126,9 @@ const Contact = () => {
                   </li>
                 );
               })}
+              <li className="flex items-center h-10 px-2 bg-gray-500 w-auto duration-300 hover:scale-125 rounded-md">
+                <Switcher size={30}/>
+              </li>
             </ul>
           </div>
         </div>

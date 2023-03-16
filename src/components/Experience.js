@@ -80,7 +80,6 @@ const Experience = () => {
   ];
   const [exp, setExp] = useState();
   function buttonClick(status) {
-    console.log(status);
     if (exp === status) {
       setExp("");
     } else {
@@ -102,12 +101,12 @@ const Experience = () => {
   return (
     <div
       name="experience"
-      className="sm:px-5 bg-gradient-to-b to-gray-800 from-black  pt-20  w-full h-screen"
+      className="sm:px-5 dark:bg-gradient-to-b dark:to-gray-800 dark:from-black  pt-20  w-full h-screen"
     >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full text-white">
+      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full dark:text-white">
         <Fade>
-          <div className="pb-20 text-center">
-            <p className="text-4xl font-bold inline border-b-4 border-gray-500">
+          <div className="pb-10 text-center">
+            <p className="text-4xl font-bold inline border-b-4 border-gray-700 dark:border-gray-500">
               Experience
             </p>
           </div>
@@ -134,7 +133,7 @@ const Experience = () => {
                 key={position + companyName}
               >
                 <div>
-                  <div className="flex flex-col">
+                  <div className="flex flex-col text-white">
                     {/* BUTTON */}
                     <button
                       onClick={() => {
@@ -167,7 +166,7 @@ const Experience = () => {
 
                     {/* COLLAPSIBLE BODY */}
                     <div
-                      className={`bg-gradient-to-r from-gray-700 via-gray-500 to-gray-700 rounded-md mt-3 p-4 ${
+                      className={`bg-gradient-to-r from-gray-700 via-gray-500 to-gray-700 rounded-md mt-3 p-3 ${
                         exp === position + companyName
                           ? "flex flex-col transition-all ease duration-150 opacity-100 h-auto"
                           : "transition-all ease duration-200 opacity-0 h-0 p-0"
