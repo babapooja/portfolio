@@ -4,6 +4,7 @@ import weatherApp from "../assets/projects/weatherApp.png";
 import mediumArticle from "../assets/projects/mediumArticle.png";
 import resumeBuilder from "../assets/projects/resumeBuilder.png";
 import taskManager from "../assets/projects/taskManager.png";
+import aroundTheGlobe from "../assets/projects/aroundTheGlobe.png";
 import { Fade } from "react-awesome-reveal";
 const Projects = () => {
   const projects = [
@@ -13,6 +14,13 @@ const Projects = () => {
       projectTitle: "Weather App - ReactJS",
       codeLink: "https://github.com/babapooja/weather-app",
       demoLink: "https://reactjs-weather-app-weather-api.netlify.app/",
+    },
+    {
+      id: 6,
+      src: aroundTheGlobe,
+      projectTitle: "Around The Globe - ReactJS",
+      codeLink: "https://github.com/babapooja/around-the-globe",
+      demoLink: "https://around-the-globe.netlify.app/",
     },
     {
       id: 5,
@@ -68,7 +76,9 @@ const Projects = () => {
             >
               Projects
             </p>
-            <p className="pt-6 font-medium">Check out some of my work right here</p>
+            <p className="pt-6 font-medium">
+              Check out some of my work right here
+            </p>
           </div>
         </Fade>
         {/* card structure */}
