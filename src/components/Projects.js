@@ -1,6 +1,7 @@
 import React from "react";
 import linkedInClone from "../assets/projects/linkedInClone.png";
 import weatherApp from "../assets/projects/weatherApp.png";
+import J2M from "../assets/projects/cmd.png";
 import mediumArticle from "../assets/projects/mediumArticle.png";
 import resumeBuilder from "../assets/projects/resumeBuilder.png";
 import taskManager from "../assets/projects/taskManager.png";
@@ -8,6 +9,13 @@ import aroundTheGlobe from "../assets/projects/aroundTheGlobe.png";
 import { Fade } from "react-awesome-reveal";
 const Projects = () => {
   const projects = [
+    {
+      id: 7,
+      src: J2M,
+      projectTitle: "J2M Converter",
+      codeLink: "https://github.com/babapooja/Masters-Project",
+      demoLink: null,
+    },
     {
       id: 1,
       src: weatherApp,
@@ -106,14 +114,14 @@ const Projects = () => {
                   {projectTitle}
                 </p>
                 <div className="flex  items-center justify-center mt-2">
-                  {codeLink != null ? (
+                  {codeLink !== null && demoLink !== null ? (
                     <button
                       onClick={() => navigateTo(demoLink)}
                       className="w-1/2 px-6 pb-4 duration-200 hover:font-bold"
                     >
                       <span className="border-b-2 border-gray-400">Demo</span>
                     </button>
-                  ) : (
+                  ) : codeLink === null && demoLink !== null ? (
                     <button
                       onClick={() => navigateTo(demoLink)}
                       className=" px-6 pb-4 duration-200 hover:font-bold"
@@ -122,7 +130,7 @@ const Projects = () => {
                         Read Article
                       </span>
                     </button>
-                  )}
+                  ) : null}
                   {codeLink && (
                     <button
                       onClick={() => navigateTo(codeLink)}
