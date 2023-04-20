@@ -1,7 +1,7 @@
 # Portfolio
 
 This is a frontend application created using ```ReactJS``` and ```tailwindCSS``` for styling.
-
+It is live here - [Portfolio](http://pooja-baba.netlify.app/)
 ## Misc
 
 Following are the packages used and their used to implement the corresponding features
