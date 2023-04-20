@@ -57,7 +57,7 @@ const Contact = () => {
     >
       <div className="flex flex-col p4 justify-center max-w-screen-lg mx-auto h-full">
         <div className=" text-center">
-          <p className="text-4xl font-bold border-b-4 inline  border-gray-700 dark:border-gray-400">
+          <p className="text-4xl font-bold border-b-4 inline  border-gray-500">
             Contact
           </p>
           <p className="py-6 font-medium">Submit the form below to get in touch with me</p>
@@ -127,7 +127,7 @@ const Contact = () => {
                 );
               })}
               <li className="flex items-center h-10 px-2 bg-gray-500 w-auto duration-300 hover:scale-125 rounded-md">
-                <Switcher size={30}/>
+                <Switcher moonColor='white' sunColor='white'  size={30}/>
               </li>
             </ul>
           </div>

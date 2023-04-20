@@ -99,17 +99,14 @@ const Projects = () => {
             return (
               <div
                 key={id}
-                className="shadow-md shadow-gray-600 rounded-lg hover:scale-105 duration-200 h-auto"
+                className="shadow-md shadow-gray-600 rounded-lg  h-auto"
               >
                 <div
-                  className="h-60"
-                  style={{
-                    backgroundImage: `url(${src})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                ></div>
+                  className="h-60 overflow-hidden"
+                >
+                  <img alt={src} src={src} className="object-fill hover:scale-105 duration-200"/>
+
+                </div>
                 <p className="text-xl text-center font-medium mt-2">
                   {projectTitle}
                 </p>

@@ -10,7 +10,6 @@ import MYSQL from "../assets/mysql.png";
 import PYTHON from "../assets/python.png";
 import JAVA from "../assets/java.png";
 import ANGULAR from "../assets/angular.png";
-import { Fade, Zoom } from "react-awesome-reveal";
 
 const Skills = () => {
   const skills = [
@@ -92,7 +91,6 @@ const Skills = () => {
       flex flex-col justify-center w-full h-full 
       dark:text-white"
       >
-        <Fade>
           <div className="text-center">
             <p
               className="text-4xl font-bold inline 
@@ -102,18 +100,15 @@ const Skills = () => {
             </p>
             <p className="py-6 font-medium">These are the technologies I have worked on</p>
           </div>
-        </Fade>
 
         <div
           className="w-full grid grid-cols-2 sm:grid-cols-4
           gap-8 text-center py-5 px-12 sm:px-0"
         >
           {skills.map(({ id, src, title, style }) => {
-            return (
-              <Zoom key={id}>
-                <div
+            return (                <div key={id}
                   className={
-                    "shadow-md hover:scale-105 duration-500 py-2 rounded-lg" +
+                    "shadow-md py-2 rounded-lg" +
                     " " +
                     style
                   }
@@ -121,7 +116,6 @@ const Skills = () => {
                   <img src={src} alt="" className="w-20 mx-auto" />
                   <p className="mt-4 font-semibold">{title}</p>
                 </div>
-              </Zoom>
             );
           })}
         </div>

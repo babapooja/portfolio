@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-scroll";
+import Switcher from "../utils/Switcher";
 
 const NavBar = () => {
   const links = [
@@ -41,7 +42,7 @@ const NavBar = () => {
       </div>
 
       {/* top navbar */}
-      <ul className="hidden md:flex">
+      <ul className="hidden md:flex items-center">
         {links.map(({ id, link }) => {
           return (
             <li
@@ -56,11 +57,12 @@ const NavBar = () => {
             </li>
           );
         })}
+        <Switcher moonColor='white' sunColor='black' size={40} />
       </ul>
 
       <div
         onClick={() => setNav(!nav)}
-        className="cursor-pointer pr-4 z-50 text-gray-500 md:hidden hover:text-gray-100 duration-300"
+        className="cursor-pointer pr-4 z-50 dark:text-gray-500 md:hidden dark:hover:text-gray-100 hover:text-gray-500 duration-300"
       >
         {!nav ? <FaBars size={30} /> : <FaTimes size={30} />}
       </div>
@@ -69,8 +71,9 @@ const NavBar = () => {
         <ul
           className="flex flex-col justify-center
       items-center absolute top-0 left-0 w-full h-screen 
-      bg-gradient-to-b from-black to-gray-800 
-      text-gray-500"
+      bg-white
+      dark:bg-gradient-to-b from-black to-gray-800 
+      dark:text-gray-500"
         >
           {links.map(({ id, link }) => {
             return (
@@ -78,7 +81,7 @@ const NavBar = () => {
                 key={id}
                 className="px-4 cursor-pointer capitalize
               py-6 text-4xl hover:font-bold 
-              hover:text-gray-100 hover:duration-200 "
+              dark:hover:text-gray-100 hover:duration-200 "
               >
                 <Link
                   onClick={() => setNav(!nav)}
