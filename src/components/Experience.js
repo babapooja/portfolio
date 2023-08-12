@@ -10,10 +10,22 @@ import { MdOutlineAlternateEmail } from "react-icons/md";
 const Experience = () => {
   const educationDetails = [
     {
+      companyName: "Georgia State University - TReNDs Center",
+      location: "Atlanta, USA",
+      startDate: "July 2023",
+      endDate: "Present",
+      position: "Full Stack Engineer II",
+      link: "https://trendscenter.org/",
+      description:
+        "Developing ReactJs web application for a Brainforge tool consuming RESTful APIs from backend created in Python Django. Worked on Docker scripts to create containers and container networks for the applications within the network to communicate.",
+      logo: "https://pbs.twimg.com/profile_images/1062750696179527680/Ti8mvia8_400x400.jpg",
+      skills: ["Python", "Django", "Docker", "ReactJS"],
+    },
+    {
       companyName: "Georgia State University",
       location: "Atlanta, USA",
       startDate: "Jan 2022",
-      endDate: "Present",
+      endDate: "May 2023",
       position: "Graduate Teaching Assistant",
       link: "https://www.gsu.edu/",
       description:
